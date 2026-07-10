@@ -28,6 +28,7 @@ function merge(left, right) {
     return result;
 }
 
+
 function mergeSort(nums) {
 
     if (nums.length <= 1) {
@@ -37,7 +38,9 @@ function mergeSort(nums) {
     const mid = Math.floor(nums.length / 2);
 
     const left = nums.slice(0, mid);
+    console.log("Left:", left);
     const right = nums.slice(mid);
+    console.log("Right:", right);
 
     return merge(
         mergeSort(left),
@@ -45,6 +48,6 @@ function mergeSort(nums) {
     );
 }
 
-let nums = [5,1,1,2,0,0];
+let nums = [2,0,2,1,1,0];
 
 console.log(mergeSort(nums));
