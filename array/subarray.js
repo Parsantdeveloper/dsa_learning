@@ -1,20 +1,25 @@
 
 
 var subarraySum = function(nums, k) {
-      let count =0;
-      let i =0
-       while(i<nums.length){
-         if(nums[i]+nums[i+1]===k){
-            count+=2;
-            i+=2
-         }else if (nums[i]===k){
-            count++;
-         }
-         i++;
-       }
-      return count ;
+   let map = new Map();
+   map.set(0,1);
+   let count = 0;
+   let prefix = 0;
+   
+   for(let num of nums){
+      prefix+=num;
+
+      if(map.has(prefix-k)){
+         count +=map.get(prefix-k);
+      }
+      map.set(prefix,(map.get(prefix)||0)+1);
+   }
+
+   return count ;
+
 };
-let nums = [-1,-1,1]
-let k =1 ;
+
+let nums = [1,2,3,3,3,2,3]
+let k =3 ;
 
 console.log(subarraySum(nums,k))
