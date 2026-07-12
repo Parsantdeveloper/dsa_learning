@@ -1,18 +1,23 @@
 
 var mergeAlternately = function(word1, word2) {
+   let res = ""
+   let i =0; 
+   let j =0;
 
-    let res = [];
-    let w1 = word1.length ;
-    let w2 = word2.length ;
-     for(let i = 0  ; i<w1 || i<w2 ;i++){
-         if(i<w1){
-            res.push(word1[i]);
-         }
-         if(i<w2){
-            res.push(word2[i]);
-         }
-     }
-     return res.join("");
+   while(i<word1.length || j<word2.length){
+        
+      if(i<word1.length){
+      res+=word1[i];
+      }
+      if(j<word2.length){
+         res+=word2[j];
+      }
+
+      i++;
+      j++;
+   }
+   return res;
+
 };
 
 let word1 ="abc";

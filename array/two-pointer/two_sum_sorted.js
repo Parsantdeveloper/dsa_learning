@@ -11,7 +11,7 @@
 // left++
 // right--
 
-function twoSum(arr,target){
+  function twoSum(arr,target){
   let i =0;
   let j = arr.length-1;
   let temp =[]
@@ -25,7 +25,7 @@ function twoSum(arr,target){
         temp=[i,j]
         return temp;
      }
-  }
-}
+    }
+    }
 
-console.log(twoSum([2,7,11,15],9))
+   console.log(twoSum([2,7,11,15],9))
