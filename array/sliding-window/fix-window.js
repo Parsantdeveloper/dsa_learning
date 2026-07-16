@@ -31,7 +31,7 @@
    function MaximumSumOfSubArray(arr,k){
       let maxSum = 0 ;
       let windowSum=0;
-      for (let i = 0 ; i <arr.length;i++){
+      for (let i = 0 ; i <arr.length;i++){  2
           windowSum+=arr[i];
          if(i>=k-1){
             maxSum=Math.max(maxSum,windowSum);
